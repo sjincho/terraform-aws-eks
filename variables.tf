@@ -464,6 +464,12 @@ variable "cluster_addons" {
   default     = {}
 }
 
+variable "cluster_addon_timeouts" {
+  description = "Create, update, and delete timeout configurations for the cluster addons"
+  type        = map(string)
+  default     = {}
+}
+
 ################################################################################
 # EKS Identity Provider
 ################################################################################

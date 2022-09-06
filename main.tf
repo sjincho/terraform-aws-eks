@@ -352,6 +352,12 @@ resource "aws_eks_addon" "this" {
   ]
 
   tags = var.tags
+
+  timeouts {
+    create = lookup(var.cluster_addon_timeouts, "create", null)
+    update = lookup(var.cluster_addon_timeouts, "update", null)
+    delete = lookup(var.cluster_addon_timeouts, "delete", null)
+  }
 }
 
 ################################################################################
